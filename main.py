@@ -1,8 +1,8 @@
 cart = []
 price = []
 items = ["apple", "grape", "orange"]
-Cart_dict = {"Apple": 2, "Grape": 1, "Orange": 3}
-cart_summary = dict((items, cart.count(items))for items in cart)
+#Cart_dict = {"Apple": 2, "Grape": 1, "Orange": 3}
+#cart_summary = dict((items, cart.count(items))for items in cart)
 user_name = input("Welcome to the GC Fruit Market! What is your name? ")
 menu = ["Apple $2", "Grape $1", "Orange $3"]
 print("                ")
@@ -44,23 +44,14 @@ while ask_again == "y":
         cart.append([items[2]])
         print("You bought 1 orange at $3")
     final_ask = input("Would you like to buy another piece of fruit? y/n ")
-    print("  ")
-
-else:
-    print("   ")
-    print(f"Order summary for {user_name}")
-    for key in Cart_dict:
-        #print(f"{key} {Cart_dict[key]['quantity']} {Cart_dict[key]['price']}")
-        print(f"{cart_summary}")
+    if final_ask == "n":
+        print("   ")
+        print(f"Order summary for {user_name}")
+        for i in range(len(cart)):
+            print(f"{cart[i]} - ${price[i]}")
         total_price = sum(price)
         print(f"Sub Total: ${total_price}")
         print(f"5% Tax: ${total_price * 0.05}")
         grand_total = total_price + total_price * 0.05
         print(f"Total: ${grand_total}")
         break
-
-
-
-
-
-
